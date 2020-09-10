@@ -13,7 +13,7 @@ export class SpotifyService {
   constructor(private http: HttpClient) { }
   getQuery(query: string): Observable<any>{
     const headers = new HttpHeaders({
-      Authorization: 'Bearer BQC2vRnVpUxG574b-pGACUPFtntyS8lXTfQdJcNYzqzo1jYcegqiO2IWcnHlyfjTJ0MAvvUeSS68KnEhkB6oYlCj6NvK-9oKY9LandUDTs6LaCW5N5-JR-jak2_UhzqCtPwSn-KwC3bNS1i8SM1HgR_iS-gswYkqfro?country=CL'
+      Authorization: 'Bearer BQDBBlNG3VqfYfVA55H_gVlOFivfZ33IxERAREhB3EBcxNiDIJlVzmph-5AOSkoMJgyDCTBSZ6Qgqo7eSjo'
     });
     const url = `https://api.spotify.com/v1/${query}`;
     return this.http.get(url, {headers});

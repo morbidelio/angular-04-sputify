@@ -10,14 +10,25 @@ import { SpotifyService } from '../../services/spotify.service';
 export class HomeComponent {
   nuevasCanciones: any[] = [];
   loading: boolean;
+  error: boolean;
+  errorMsg: string;
 
   constructor(private http: HttpClient, spotify: SpotifyService) {
+    this.error = false;
+    this.errorMsg = 'Esto es un error :C';
     this.loading = true;
     console.log('iniciado');
-    spotify.getNewReleases().subscribe((data) => {
-      console.log(data);
-      this.nuevasCanciones = data;
-      this.loading = false;
-    });
+    spotify.getNewReleases().subscribe(
+      (successSvc) => {
+        console.log(successSvc);
+        this.nuevasCanciones = successSvc;
+        this.loading = false;
+      },
+      (errorSvc) => {
+        this.error = true;
+        this.errorMsg = errorSvc.error.error.message;
+        this.loading = false;
+      }
+    );
   }
 }
