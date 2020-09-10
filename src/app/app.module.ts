@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 import { routes } from './app-routing.module';
@@ -10,9 +11,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { RouterModule } from '@angular/router';
-import { NoImagePipe } from './pipes/no-image.pipe';
 import { TarjetaComponent } from './components/shared/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
+import { NoImagePipe } from './pipes/no-image.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { TarjetaComponent } from './components/shared/tarjeta/tarjeta.component'
     ArtistaComponent,
     NavbarComponent,
     NoImagePipe,
-    TarjetaComponent
+    DomseguroPipe,
+    TarjetaComponent,
+    LoadingComponent
   ],
   imports: [
     HttpClientModule,
