@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sputify"
+    }
+  },
+  "defaultProject": "sputify",
+  "cli": {
+    "analytics": "f3a95a38-3b31-4876-a840-d12e572f57dd"
+  }
 }
